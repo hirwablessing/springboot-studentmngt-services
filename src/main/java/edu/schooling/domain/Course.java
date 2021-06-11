@@ -1,4 +1,4 @@
-package edu.schooling.models;
+package edu.schooling.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -15,7 +15,7 @@ public class Course {
     private  Long numHours;
 
     @OneToMany(mappedBy = "C")
-    private Set<com.example.JspStudentCrud.models.CourseAssignment> courseAssignments = new HashSet<>();
+    private Set<CourseAssignment> courseAssignments = new HashSet<>();
 
     public Course() {
     }

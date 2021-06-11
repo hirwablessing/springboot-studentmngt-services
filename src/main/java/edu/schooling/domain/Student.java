@@ -1,4 +1,4 @@
-package edu.schooling.models;
+package edu.schooling.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -20,10 +20,10 @@ public class Student {
                 joinColumns = {@JoinColumn(name = "student_id")},
                 inverseJoinColumns = {@JoinColumn(name = "bed_id")}
         )
-        private Set<com.example.JspStudentCrud.models.Bed> beds = new HashSet<com.example.JspStudentCrud.models.Bed>();
+        private Set<Bed> beds = new HashSet<Bed>();
 
         @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-        private Set<com.example.JspStudentCrud.models.CourseAssignment> courses = new HashSet<>();
+        private Set<CourseAssignment> courses = new HashSet<>();
 
         public Long getId() {
             return id;
@@ -57,11 +57,11 @@ public class Student {
             this.gender = gender;
         }
 
-    public Set<com.example.JspStudentCrud.models.Bed> getBeds() {
+    public Set<Bed> getBeds() {
         return beds;
     }
 
-    public void setBeds(Set<com.example.JspStudentCrud.models.Bed> beds) {
+    public void setBeds(Set<Bed> beds) {
         this.beds = beds;
     }
 

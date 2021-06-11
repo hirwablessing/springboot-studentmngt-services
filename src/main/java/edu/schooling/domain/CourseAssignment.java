@@ -1,6 +1,6 @@
-package edu.schooling.models;
+package edu.schooling.domain;
 
-import com.example.JspStudentCrud.enums.AssignmentStatus;
+import edu.schooling.enums.AssignmentStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,6 +26,7 @@ public class CourseAssignment  implements Serializable {
 
     @ManyToOne
     private Student student;
+
 
     @ManyToOne
     private Course course;

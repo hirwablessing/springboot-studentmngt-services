@@ -1,4 +1,4 @@
-package edu.schooling.models;
+package edu.schooling.domain;
 
 import com.example.JspStudentCrud.enums.BedType;
 
