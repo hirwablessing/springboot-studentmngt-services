@@ -1,6 +1,6 @@
 package edu.schooling.domain;
 
-import com.example.JspStudentCrud.enums.BedType;
+import edu.schooling.enums.BedType;
 
 import javax.persistence.*;
 import java.util.HashSet;
