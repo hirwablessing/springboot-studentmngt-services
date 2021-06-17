@@ -1,11 +1,12 @@
 package edu.schooling.domain;
 
+import edu.schooling.domain.dto.StudentDto;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "student")
 public class Student {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +26,13 @@ public class Student {
         @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
         private Set<CourseAssignment> courses = new HashSet<>();
 
-        public Long getId() {
+    public Student(StudentDto dto) {
+        this.firstName = dto.getFirstName();
+        this.lastName = dto.getLastName();
+        this.gender = dto.getGender();
+    }
+
+    public Long getId() {
             return id;
         }
 

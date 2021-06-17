@@ -14,8 +14,8 @@ public class Course {
     private String title;
     private  Long numHours;
 
-    @OneToMany(mappedBy = "C")
-    private Set<CourseAssignment> courseAssignments = new HashSet<>();
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    private final Set<CourseAssignment> students = new HashSet<>();
 
     public Course() {
     }
